@@ -238,6 +238,7 @@ private:
     };
 
     std::unordered_map<sai_object_id_t, SchedulerGroupPortInfo_t> m_scheduler_group_port_info;
+    void initQoSCapabilities(sai_object_id_t switchId)
 
     friend QosMapHandler;
     friend DscpToTcMapHandler;

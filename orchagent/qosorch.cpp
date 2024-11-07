@@ -114,6 +114,92 @@ map<string, string> qos_to_ref_table_map = {
     {encap_tc_to_dscp_field_name, CFG_TC_TO_DSCP_MAP_TABLE_NAME},
     {encap_tc_to_queue_field_name, CFG_TC_TO_QUEUE_MAP_TABLE_NAME}
 };
+map<string, int32_t> qos_feature_table_attr_map = {
+    {"OBJECT_TYPE", SAI_OBJECT_TYPE_PORT},
+    {"SAI_PORT_ATTR_QOS_DSCP_TO_TC_MAP", SAI_PORT_ATTR_QOS_DSCP_TO_TC_MAP},
+    {"SAI_PORT_ATTR_QOS_MPLS_EXP_TO_TC_MAP", SAI_PORT_ATTR_QOS_MPLS_EXP_TO_TC_MAP},
+    {"SAI_PORT_ATTR_QOS_DOT1P_TO_TC_MAP", SAI_PORT_ATTR_QOS_DOT1P_TO_TC_MAP},
+    {"SAI_PORT_ATTR_QOS_TC_TO_QUEUE_MAP", SAI_PORT_ATTR_QOS_TC_TO_QUEUE_MAP},
+    {"SAI_PORT_ATTR_QOS_TC_AND_COLOR_TO_DOT1P_MAP", SAI_PORT_ATTR_QOS_TC_AND_COLOR_TO_DOT1P_MAP},
+    {"SAI_PORT_ATTR_QOS_TC_AND_COLOR_TO_DSCP_MAP", SAI_PORT_ATTR_QOS_TC_AND_COLOR_TO_DSCP_MAP},
+    {"SAI_PORT_ATTR_QOS_TC_TO_PRIORITY_GROUP_MAP", SAI_PORT_ATTR_QOS_TC_TO_PRIORITY_GROUP_MAP},
+    {"SAI_PORT_ATTR_QOS_PFC_PRIORITY_TO_PRIORITY_GROUP_MAP", SAI_PORT_ATTR_QOS_PFC_PRIORITY_TO_PRIORITY_GROUP_MAP},
+    {"SAI_PORT_ATTR_QOS_PFC_PRIORITY_TO_QUEUE_MAP", SAI_PORT_ATTR_QOS_PFC_PRIORITY_TO_QUEUE_MAP},
+    {"SAI_PORT_ATTR_QOS_DSCP_TO_FORWARDING_CLASS_MAP", SAI_PORT_ATTR_QOS_DSCP_TO_FORWARDING_CLASS_MAP},
+    {"SAI_PORT_ATTR_QOS_MPLS_EXP_TO_FORWARDING_CLASS_MAP", SAI_PORT_ATTR_QOS_MPLS_EXP_TO_FORWARDING_CLASS_MAP},
+    {"SAI_PORT_ATTR_QOS_SCHEDULER_PROFILE_ID", SAI_PORT_ATTR_QOS_SCHEDULER_PROFILE_ID},
+    {"SAI_PORT_ATTR_QOS_NUMBER_OF_SCHEDULER_GROUPS", SAI_PORT_ATTR_QOS_NUMBER_OF_SCHEDULER_GROUPS},
+    {"SAI_PORT_ATTR_QOS_SCHEDULER_GROUP_LIST", SAI_PORT_ATTR_QOS_SCHEDULER_GROUP_LIST},
+
+    {"OBJECT_TYPE", SAI_OBJECT_TYPE_QOS_MAP},
+    {"SAI_QOS_MAP_ATTR_TYPE", SAI_QOS_MAP_ATTR_TYPE},
+    {"SAI_QOS_MAP_ATTR_MAP_TO_VALUE_LIST",SAI_QOS_MAP_ATTR_MAP_TO_VALUE_LIST},
+
+    {"OBJECT_TYPE", SAI_OBJECT_TYPE_WRED},
+    {"SAI_WRED_ATTR_YELLOW_MAX_THRESHOLD", SAI_WRED_ATTR_YELLOW_MAX_THRESHOLD},
+    {"SAI_WRED_ATTR_YELLOW_MIN_THRESHOLD", SAI_WRED_ATTR_YELLOW_MIN_THRESHOLD},
+    {"SAI_WRED_ATTR_YELLOW_DROP_PROBABILITY", SAI_WRED_ATTR_YELLOW_DROP_PROBABILITY},
+    {"SAI_WRED_ATTR_YELLOW_ENABLE", SAI_WRED_ATTR_YELLOW_ENABLE},
+    {"SAI_WRED_ATTR_GREEN_MAX_THRESHOLD", SAI_WRED_ATTR_GREEN_MAX_THRESHOLD},
+    {"SAI_WRED_ATTR_GREEN_MIN_THRESHOLD", SAI_WRED_ATTR_GREEN_MIN_THRESHOLD},
+    {"SAI_WRED_ATTR_GREEN_DROP_PROBABILITY", SAI_WRED_ATTR_GREEN_DROP_PROBABILITY},
+    {"SAI_WRED_ATTR_GREEN_ENABLE", SAI_WRED_ATTR_GREEN_ENABLE},
+    {"SAI_WRED_ATTR_RED_MAX_THRESHOLD", SAI_WRED_ATTR_RED_MAX_THRESHOLD},
+    {"SAI_WRED_ATTR_RED_MIN_THRESHOLD", SAI_WRED_ATTR_RED_MIN_THRESHOLD},
+    {"SAI_WRED_ATTR_RED_DROP_PROBABILITY", SAI_WRED_ATTR_RED_DROP_PROBABILITY},
+    {"SAI_WRED_ATTR_RED_ENABLE", SAI_WRED_ATTR_RED_ENABLE},
+    {"SAI_WRED_ATTR_ECN_MARK_MODE", SAI_WRED_ATTR_ECN_MARK_MODE},
+    {"SAI_WRED_ATTR_WEIGHT", SAI_WRED_ATTR_WEIGHT},
+
+    {"OBJECT_TYPE", SAI_OBJECT_TYPE_SCHEDULER},
+    {"SAI_SCHEDULER_ATTR_SCHEDULING_TYPE", SAI_SCHEDULER_ATTR_SCHEDULING_TYPE},
+    {"SAI_SCHEDULER_ATTR_SCHEDULING_WEIGHT", SAI_SCHEDULER_ATTR_SCHEDULING_WEIGHT},
+    {"SAI_SCHEDULER_ATTR_METER_TYPE", SAI_SCHEDULER_ATTR_METER_TYPE},
+    {"SAI_SCHEDULER_ATTR_MIN_BANDWIDTH_RATE", SAI_SCHEDULER_ATTR_MIN_BANDWIDTH_RATE},
+    {"SAI_SCHEDULER_ATTR_METER_TYPE", SAI_SCHEDULER_ATTR_METER_TYPE},
+    {"SAI_SCHEDULER_ATTR_MIN_BANDWIDTH_RATE", SAI_SCHEDULER_ATTR_MIN_BANDWIDTH_RATE},
+    {"SAI_SCHEDULER_ATTR_MIN_BANDWIDTH_BURST_RATE", SAI_SCHEDULER_ATTR_MIN_BANDWIDTH_BURST_RATE},
+    {"SAI_SCHEDULER_ATTR_MAX_BANDWIDTH_RATE", SAI_SCHEDULER_ATTR_MAX_BANDWIDTH_RATE},
+    {"SAI_SCHEDULER_ATTR_MAX_BANDWIDTH_BURST_RATE", SAI_SCHEDULER_ATTR_MAX_BANDWIDTH_BURST_RATE},
+
+    {"OBJECT_TYPE", SAI_OBJECT_TYPE_SCHEDULER_GROUP},
+    {"SAI_SCHEDULER_GROUP_ATTR_CHILD_COUNT", SAI_SCHEDULER_GROUP_ATTR_CHILD_COUNT},
+    {"SAI_SCHEDULER_GROUP_ATTR_CHILD_LIST", SAI_SCHEDULER_GROUP_ATTR_CHILD_LIST},
+    {"SAI_SCHEDULER_GROUP_ATTR_SCHEDULER_PROFILE_ID", SAI_SCHEDULER_GROUP_ATTR_SCHEDULER_PROFILE_ID},
+
+    {"OBJECT_TYPE", SAI_OBJECT_TYPE_QUEUE},
+    {"SAI_QUEUE_ATTR_WRED_PROFILE_ID", SAI_QUEUE_ATTR_WRED_PROFILE_ID},
+
+    {"OBJECT_TYPE", SAI_OBJECT_TYPE_SWITCH},
+    {"SAI_SWITCH_ATTR_QOS_DSCP_TO_TC_MAP", SAI_SWITCH_ATTR_QOS_DSCP_TO_TC_MAP}
+};
+map<string, sai_ecn_mark_mode_t> qos_feature_table_ecn_enum_map = {
+    {"SAI_ECN_MARK_MODE_NONE", SAI_ECN_MARK_MODE_NONE},
+    {"SAI_ECN_MARK_MODE_GREEN", SAI_ECN_MARK_MODE_GREEN},
+    {"SAI_ECN_MARK_MODE_YELLOW", SAI_ECN_MARK_MODE_YELLOW},
+    {"SAI_ECN_MARK_MODE_RED", SAI_ECN_MARK_MODE_RED},
+    {"SAI_ECN_MARK_MODE_GREEN_YELLOW", SAI_ECN_MARK_MODE_GREEN_YELLOW},
+    {"SAI_ECN_MARK_MODE_GREEN_RED", SAI_ECN_MARK_MODE_GREEN_RED},
+    {"SAI_ECN_MARK_MODE_YELLOW_RED", SAI_ECN_MARK_MODE_YELLOW_RED},
+    {"SAI_ECN_MARK_MODE_ALL", SAI_ECN_MARK_MODE_ALL}
+};
+map<string, sai_meter_type_t> qos_feature_table_metertype_enum_map = {
+    {"SAI_METER_TYPE_PACKETS", SAI_METER_TYPE_PACKETS},
+    {"SAI_METER_TYPE_BYTES", SAI_METER_TYPE_BYTES},
+};
+map<string, sai_qos_map_type_t> qos_feature_table_qosmap_enum_map = {
+    {"SAI_QOS_MAP_TYPE_DSCP_TO_TC", SAI_QOS_MAP_TYPE_DSCP_TO_TC},
+    {"SAI_QOS_MAP_TYPE_MPLS_EXP_TO_TC", SAI_QOS_MAP_TYPE_MPLS_EXP_TO_TC},
+    {"SAI_QOS_MAP_TYPE_DOT1P_TO_TC", SAI_QOS_MAP_TYPE_DOT1P_TO_TC},
+    {"SAI_QOS_MAP_TYPE_TC_TO_QUEUE", SAI_QOS_MAP_TYPE_TC_TO_QUEUE},
+    {"SAI_QOS_MAP_TYPE_TC_AND_COLOR_TO_DOT1P", SAI_QOS_MAP_TYPE_TC_AND_COLOR_TO_DOT1P},
+    {"SAI_QOS_MAP_TYPE_TC_TO_PRIORITY_GROUP", SAI_QOS_MAP_TYPE_TC_TO_PRIORITY_GROUP},
+    {"SAI_QOS_MAP_TYPE_PFC_PRIORITY_TO_PRIORITY_GROUP", SAI_QOS_MAP_TYPE_PFC_PRIORITY_TO_PRIORITY_GROUP},
+    {"SAI_QOS_MAP_TYPE_PFC_PRIORITY_TO_QUEUE", SAI_QOS_MAP_TYPE_PFC_PRIORITY_TO_QUEUE},
+    {"SAI_QOS_MAP_TYPE_DSCP_TO_FORWARDING_CLASS", SAI_QOS_MAP_TYPE_DSCP_TO_FORWARDING_CLASS},
+    {"SAI_QOS_MAP_TYPE_MPLS_EXP_TO_FORWARDING_CLASS", SAI_QOS_MAP_TYPE_MPLS_EXP_TO_FORWARDING_CLASS},
+    {"SAI_QOS_MAP_TYPE_TC_AND_COLOR_TO_DSCP", SAI_QOS_MAP_TYPE_TC_AND_COLOR_TO_DSCP}
+};
 
 #define DSCP_MAX_VAL 63
 #define EXP_MAX_VAL 7
@@ -1314,6 +1400,7 @@ QosOrch::QosOrch(DBConnector *db, vector<string> &tableNames) : Orch(db, tableNa
     SWSS_LOG_ENTER();
 
     initTableHandlers();
+    initQoSCapabilities(gSwitchId);
 };
 
 type_map& QosOrch::getTypeMap()
@@ -2340,4 +2427,98 @@ void QosOrch::removeTunnelReference(std::string referencing_table_name, std::str
     removeObject(m_qos_maps, referencing_table_name, tunnel_name);
     SWSS_LOG_INFO("Freed QoS objects referenced by %s:%s", referencing_table_name.c_str(), tunnel_name.c_str());
 }
+void QosOrch::initQoSCapabilities(sai_object_id_t switchId)
+{
+    /* Initialize capability table*/
+    m_qosCapabilitiesTable = unique_ptr<Table>(new Table(m_state_db.get(),
+                             STATE_QOS_PLATFORM_FEATURE_CAPABILITIES_NAME));
 
+    sai_attr_capability_t capability;
+
+    vector<FieldValueTuple> fieldValuesTrue;
+    fieldValuesTrue.push_back(FieldValueTuple("SetSupported", "true"));
+
+    vector<FieldValueTuple> fieldValuesFalse;
+    fieldValuesFalse.push_back(FieldValueTuple("SetSupported", "false"));
+
+    sai_object_type_t obj_type = SAI_OBJECT_TYPE_NULL;
+
+    for (auto it = qos_feature_table_attr_map.begin(); it != qos_feature_table_map.end(); ++it)
+    {
+
+        if (it->first == "OBJECT_TYPE")
+        {
+            obj_type = it->second;
+            continue;
+        }
+        capability.set_implemented = false;
+        if (sai_query_attribute_capability(switchId, obj_type,
+                                            it->second,
+                                            &capability) == SAI_STATUS_SUCCESS)
+        {
+            if (capability.set_implemented == true)
+            {
+                m_qosCapabilitiesTable->set(it->first, fieldValuesTrue)
+                continue;
+            }
+        }
+        m_qosCapabilitiesTable->set(it->first, fieldValuesFalse)
+    }
+
+    vector<int32_t> supported_enums(12, 0);
+    sai_s32_list_t values;
+    values.count = 12;
+    values.list = supported_enums.data();
+    int32_t attribute;
+    int32_t count = 0,idx = 0;
+
+    /*ECN Mark modes*/
+    if (sai_query_attribute_enum_values_capability(switchId, SAI_OBJECT_TYPE_WRED,
+                                                   SAI_WRED_ATTR_ECN_MARK_MODE,
+                                                   &values) != SAI_STATUS_SUCCESS)
+    {
+        for (idx = 0; idx < values.count; idx ++) 
+        {
+            for (auto it = qos_feature_table_ecn_enum_map.begin; it != qos_feature_table_enum_map.end(); it++)
+            {
+                if (it->second == values.list[i])
+                {
+                    m_qosCapabilitiesTable->set(it->first, fieldValuesTrue); 
+                }
+            }
+        }
+    }
+    /*Scheduler Meter Type*/
+    if (sai_query_attribute_enum_values_capability(switchId, SAI_OBJECT_TYPE_SCHEDULER,
+                                                   SAI_SCHEDULER_ATTR_METER_TYPE,
+                                                   &values) != SAI_STATUS_SUCCESS)
+    {
+        for (idx = 0; idx < values.count; idx ++) 
+        {
+            for (auto it = qos_feature_table_metertype_enum_map.begin; it != qos_feature_table_metertype_enum_map.end(); it++)
+            {
+                if (it->second == values.list[i])
+                {
+                    m_qosCapabilitiesTable->set(it->first, fieldValuesTrue); 
+                }
+            }
+        }
+    }
+    /*QoS Map Types*/
+    if (sai_query_attribute_enum_values_capability(switchId, SAI_OBJECT_TYPE_QOS_MAP,
+                                                   SAI_QOS_MAP_ATTR_TYPE,
+                                                   &values) != SAI_STATUS_SUCCESS)
+    {
+        for (idx = 0; idx < values.count; idx ++) 
+        {
+            for (auto it = qos_feature_table_qosmap_enum_map.begin; it != qos_feature_table_qosmap_enum_map.end(); it++)
+            {
+                if (it->second == values.list[i])
+                {
+                    m_qosCapabilitiesTable->set(it->first, fieldValuesTrue); 
+                }
+            }
+        }
+    }
+
+}
